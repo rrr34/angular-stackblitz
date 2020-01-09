@@ -1,5 +1,26 @@
 <h2>Products</h2>
 
+<div *ngFor="let produit of products">
+
+  <h3>
+    <a [title]="produit.name + ' a ver kesesto'">
+      {{produit.name}}
+    </a>
+  </h3>
+
+  <p *ngIf="produit.description">
+    Descripción = {{produit.description}}
+  </p>
+
+  <button (click)="share()">
+    Share me
+  </button>
+
+  <app-product-alerts
+    [prod]="produit"
+    (notimex)="averdialgo()">
+  </app-product-alerts>
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
